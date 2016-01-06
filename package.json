@@ -1,0 +1,26 @@
+{
+  "name": "shake-hands",
+  "version": "0.0.1",
+  "description": "本项目通过 nodejs + json 模拟后端开发过程中的具体细节，让Web前端通过 javascript 语法了解到后端是如何开发的。以此让Web前端与后端配合的过程中更顺利。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimojs/shake-hands.git"
+  },
+  "author": "nimojs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nimojs/shake-hands/issues"
+  },
+  "homepage": "https://github.com/nimojs/shake-hands#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "fs-extra": "^0.26.4",
+    "handlebars": "^4.0.5",
+    "mockjs": "^1.0.0-beta1"
+  }
+}

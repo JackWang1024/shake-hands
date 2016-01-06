@@ -1,0 +1,47 @@
+{{-include '/view/include/header1.html'}}
+    <title>注册</title>
+{{-include '/view/include/header2.html'}}
+<form action="/register/" method="post" id="Form">
+     <div class="form-group">
+        <label >user</label>
+        <input type="text" class="form-control" name="user" >
+      </div>
+      <div class="form-group">
+        <label >password</label>
+        <input type="password" class="form-control" name="password" >
+      </div>
+      <div class="form-group">
+        <label >confirm password</label>
+        <input type="password" class="form-control" name="confirm_password" >
+      </div>
+    <button type="submit" class="btn btn-default">注册</button>
+</form>
+正确用户名密码请看 <a href="/all_user/">用户列表</a>
+
+{{-include '/view/include/footer1.html'}}
+<script>
+$(function () {
+    $('#Form').on('submit', function () {
+        var $this = $(this)
+        var formData = $this.serializeArray()
+        var action = $this.attr('action')
+        $.ajax({
+            type: 'post',
+            url: action,
+            data: formData,
+            dataType: 'json'
+        }).done(function (res) {
+            if (res.status === 'success') {
+                alert('注册成功')
+                location.href = '/all_user/'
+            }
+            else {
+                alert(res.msg)
+            }
+        })
+        // 阻止表单提交
+        return false
+    })
+})
+</script>
+{{-include '/view/include/footer2.html'}}
